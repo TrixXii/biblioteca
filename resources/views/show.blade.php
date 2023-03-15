@@ -1,8 +1,9 @@
 @extends('welcome')
 
 @section('content')
-    <div class="container">
+    <div class="container ">
         <h1>{{ $book->title }}</h1>
+        <img class="w-25" src="{{ $book->img }}" alt="img">
         <p><strong>ISBN:</strong> {{ $book->isbn }}</p>
         <p><strong>Autor:</strong> {{ $book->author }}</p>
         <p><strong>Precio:</strong> {{ $book->price }}<span>€</span></p>

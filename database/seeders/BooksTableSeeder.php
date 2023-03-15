@@ -1,9 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-use Faker\Factory as Faker;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,9 +20,10 @@ class BooksTableSeeder extends Seeder
                 'isbn' => $faker->isbn10(),
                 'title' => $faker->sentence,
                 'author' => $faker->name,
-                'published_date' =>$faker->date(),
+                'published_date' => $faker->date(),
                 'description' => $faker->paragraph,
                 'price' => $faker->randomFloat(2, 5, 20),
+                'img' => $faker->imageUrl(640, 480, 'books', true), // Agrega la imagen generada aleatoriamente
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]);

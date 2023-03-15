@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('published_date');
             $table->string('description');
             $table->decimal('price');
+            $table->string('img');
             $table->timestamps();
         });
     }

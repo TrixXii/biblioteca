@@ -15,7 +15,31 @@
                 @endforeach
             </select>
         </div>
-    </form>
+    </form> 
+    <div id="contenido" class="row row-cols-md-3 g-3 m-auto">
+    @foreach($books as $book)
+    <div class="col">
+        <div class="card">
+            <img src="{{$book->img}}" alt="" id="imagen" class="object-fit-cover card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{$book->title}}</h5>
+                <p class="card-text"><b>Author:</b>{{$book->author}}</p>
+            </div>
+            <a href="{{ route('edit', $book->id) }}">Editar</a>
+            <form method="POST" action="{{ route('destroy', ['id' => $book->id]) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Eliminar</button>
+                </form>
+                
+                <a href="{{ route('show', $book->id) }}">Mas info</a>
+            <div class="pb-2 card-footer">
+                <small class="text-muted "><b>isbn:</b>{{$book->isbn}}</small>
+            </div>
+            
+        </div>
+    </div>
+    @endforeach</div>
             <table class="table">
                 <thead>
                     <tr>
@@ -34,13 +58,7 @@
                             <td>{{$book->title}}</td>
                             <td>{{$book->author}}</td>
                             <td><a href="{{ route('edit', $book->id) }}">Editar</a></td>
-                            <td><form method="POST" action="{{ route('destroy', ['id' => $book->id]) }}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Eliminar</button>
-                            </form>
-                            </td>
-                            <td><a href="{{ route('show', $book->id) }}">Mas info</a></td>
+                            
                         </tr>
                     @endforeach
                 </tbody>
