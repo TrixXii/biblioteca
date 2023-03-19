@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -71,7 +72,6 @@ public function store(Request $request){
             'category_id' => $category_id
         ]);
     }
-
     return redirect()->route('books')->with('OK', 'Libro creado correctamente');
 }
 
@@ -114,7 +114,7 @@ public function update(Request $request, $id)
         DB::table('book_category')->insert($data);
     }
 
-    return redirect()->route('show', ['id' => $id]);
+    return redirect()->route('show', ['id' => $id])>with('OK', 'Libro editado correctamente');
 }
 
 
