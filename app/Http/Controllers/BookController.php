@@ -114,7 +114,7 @@ public function update(Request $request, $id)
         DB::table('book_category')->insert($data);
     }
 
-    return redirect()->route('show', ['id' => $id])>with('OK', 'Libro editado correctamente');
+    return redirect()->route('show', ['id' => $id])->with('OK', 'Libro editado correctamente');
 }
 
 

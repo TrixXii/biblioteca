@@ -17,7 +17,7 @@
             </select>
         </div>
     </form> 
-    <a class="m-3" href="{{ route('create') }}">Crear</a>
+    <a class="m-3 btn btn-success" href="{{ route('create') }}">Crear  <i class="fa fa-plus"></i></a>
 
     <div id="contenido" class="row row-cols-md-3 g-3 m-auto">
     @foreach($books as $book)

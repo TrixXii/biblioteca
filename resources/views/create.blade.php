@@ -48,7 +48,7 @@
             </div>
             
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="button" class="btn btn-danger">Cancelar</button>
+            <a href="{{ route('books') }}" class="btn btn-danger" >Cancelar</a>
 
         </form>
     </div>
